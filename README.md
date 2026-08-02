@@ -11,7 +11,7 @@ A local, real-time bilingual live subtitle application that transcribes and tran
 - **Floating Overlay UI**: Semi-transparent, resizable, and stretchable subtitle window.
 - **Multi-Model Support**: Compatible with various Whisper models (`tiny`, `base`, `small`, `medium`, `large`, `large-v3-turbo`).
 - **Simultaneous Transcription & Translation**: Real-time speech recognition and translation into target languages.
-- **Vulkan GPU Acceleration**: Supports NVIDIA CUDA, AMD ROCm/Vulkan, and Intel GPUs.
+- **Vulkan GPU Acceleration**: Supports NVIDIA, AMD and Intel GPUs.
 - **Voice Activity Detection (VAD)**: Integrated VAD for filtering silence and audio segments.
 - **Chinese Conversion**: Built-in OpenCC integration for Traditional/Simplified Chinese output.
 
