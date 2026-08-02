@@ -60,7 +60,7 @@ live_subtitle/
     ├── whisper-cli.exe
     └── *.dll
 ```
-
+![python file](https://github.com/kw4356/Live-subtitle-tool/blob/main/file-structure-python.PNG)
 ### Executable (.exe) Environment
 ```text
 live_subtitle/
@@ -72,7 +72,7 @@ live_subtitle/
     ├── whisper-cli.exe
     └── *.dll
 ```
-
+![exe file](https://github.com/kw4356/Live-subtitle-tool/blob/main/file-structure-exe.PNG)
 ---
 
 ## 🚀 Get Started
@@ -110,7 +110,7 @@ python live_subtitle.py
 
 ### Option 2: Running Standalone Executable (.exe)
 
-1. Create a folder and place `live_subtitle.exe` inside.
+1. Create a folder and place [live_subtitle.exe](https://github.com/kw4356/Live-subtitle-tool/releases/tag/v1.0) inside.
 2. Download `whisper-vulkan` from [whisper.cpp-rocm releases](https://github.com/lemonade-sdk/whisper.cpp-rocm/releases).
    - Create a folder named `whisper-vulkan` in the same directory.
    - Extract all contents (`whisper-cli.exe`, `.dll` files) into `whisper-vulkan/`.
