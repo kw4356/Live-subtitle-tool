@@ -17,9 +17,9 @@ A local, real-time bilingual live subtitle application that transcribes and tran
 
 ---
 
-## ⚙️ Tech Stack & Pipeline
+## ⚙️ Tech 
 
-$$\text{System Audio Output} \longrightarrow \text{whisper.cpp \& VAD} \longrightarrow \text{Transcription Subtitle} \longrightarrow \text{llama.cpp} \longrightarrow \text{Translated Subtitle}$$
+System audio output → whisper.cpp & VAD → subtitle → llama cpp → translate subtitle
 
 ---
 
@@ -123,7 +123,7 @@ python live_subtitle.py
 
 ## 🎛️ GUI Configuration Guide
 
-![GUI Control Bar](gui.png)
+![Screenshot](https://github.com/kw4356/Live-subtitle-tool/blob/main/livesubGUI.PNG)
 
 | Parameter | Description |
 | :--- | :--- |
