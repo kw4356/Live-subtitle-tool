@@ -161,14 +161,13 @@ python live_subtitle.py
 | `nllb-200-distilled-1.3B-q4_k_m` | ~1.2 GB | Higher capacity multi-lingual translation model by Meta. |
 
 💡 **Hardware VRAM Pairing Example:**
-- Combining **Large-v3-turbo Q8** (~850 MB VRAM) + **qwen2.5-1.5b-instruct-q4_k_m** (~950 MB VRAM) yields a total VRAM footprint of **~2.5 GB**.
-- This setup will run smoothly on GPUs such as the **GTX 1060 (3GB)**.
-
+- Combining **Large-v3-turbo Q8** (~850 MB) + **qwen2.5-1.5b-instruct-q4_k_m** (~950 MB), total vram usage will be around 2.5GB.
+So, even GTX1060 3GB should be good enough to run smoothly.  
 ---
 
 ## 📜 License & Copyright
 
 - **Third-Party Libraries**: Individual components (e.g., `whisper.cpp`, `llama.cpp`, and respective dependencies) are governed by their original project licenses.
-- **Project License**: Distributed under the **MIT License**.
+- **Project License**: Distributed under the **[MIT License](https://opensource.org/license/MIT)**.
 
 Copyright © 2026 **kw4356**
