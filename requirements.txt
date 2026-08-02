@@ -1,0 +1,5 @@
+numpy
+PyQt6
+pyaudiowpatch
+opencc
+webrtcvad
