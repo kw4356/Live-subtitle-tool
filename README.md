@@ -100,7 +100,7 @@ pip install llama_cpp_python-0.3.34-py3-none-win_amd64.whl
 2. Download and place your selected models inside:
    - **Whisper Model**: must be in **GGML** format (`.bin`).
    - **LLM Model**: must be in **GGUF** format (`.gguf`).
-
+*it will auto search for the .bin and .gguf files inside the models folder
 #### 4. Run Application
 ```bash
 python live_subtitle.py
@@ -117,6 +117,7 @@ python live_subtitle.py
 3. Create a `models/` directory in the same path and add your models:
    - **Whisper model** (`.bin` GGML format)
    - **LLM model** (`.gguf` format)
+*it will auto search for the .bin and .gguf files inside the models folder
 4. Double-click `live_subtitle.exe` to start.
 
 ---
