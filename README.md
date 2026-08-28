@@ -28,6 +28,7 @@ folder structure:
 
 Recommend models
 ASR: qwen3-asr-1.7b-q4_k.gguf
+
 LLM: LFM2.5-1.2B-Instruct-Q4_K_M.gguf or qwen2.5-1.5b-instruct-q4_k_m
 
 ---
