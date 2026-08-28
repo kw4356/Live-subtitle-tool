@@ -20,9 +20,12 @@ A local, real-time bilingual live subtitle application that transcribes and tran
 Update v2.0
 -Replace engine with CrispASR *(Credits to [CrispStrobe](https://github.com/CrispStrobe/CrispASR))*
 Now it can use more ASR models. 
+
 1,Please download CrispASR from **[CrispASR release](https://github.com/CrispStrobe/CrispASR/releases)** ,
 and then unzip it as folder CrispASR.
+
 2,Put ASR model and LLM model into models folder
+
 folder structure:
 ![folder](https://github.com/kw4356/Live-subtitle-tool/blob/main/folder-structure.PNG)
 
