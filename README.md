@@ -177,8 +177,7 @@ python live_subtitle.py
 | `qwen2.5-1.5b-instruct-q4_k_m` | ~950 MB | Strong performance across Asian languages. |
 | `gemma-3-1b-it-q4_k_m` | ~750 MB | Fast and compact general instruction model. |
 | `HY-MT1.5-1.8B-Q4_K_M` | ~1.1 GB | Specialized machine translation model by Tencent. |
-| `nllb-200-distilled-600M-q4_k_m` | ~750 MB | Lightweight multi-lingual translation model by Meta. |
-| `nllb-200-distilled-1.3B-q4_k_m` | ~1.2 GB | Higher capacity multi-lingual translation model by Meta. |
+
 
 💡 **Hardware VRAM Pairing Example:**
 - Combining **Large-v3-turbo Q8** (~850 MB) + **qwen2.5-1.5b-instruct-q4_k_m** (~950 MB), total vram usage will be around 2.5GB.
