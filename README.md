@@ -74,14 +74,15 @@ live_subtitle/
 ## 🚀 Get Started
 
 1. Download and unzip **live_subtitle.rar** [live_subtitle.exe](https://github.com/kw4356/Live-subtitle-tool/releases/tag/v2.1) inside.
-2. Download ASR and LLM model
+2. Download ASR and LLM model, put them into `models` folder.
+   
    **Recommend**
    ASR:[Qwen3-ASR-1.7B-GGUF](https://huggingface.co/cstr/qwen3-asr-1.7b-GGUF) Q4_K or
    [Qwen3-ASR 0.6B-GGUF](https://huggingface.co/cstr/qwen3-asr-0.6b-GGUF) q4_k-imatrix if you have limited VRAM
    LLM:[Hy-MT2-1.8B-GGUF](https://huggingface.co/unsloth/Hy-MT2-1.8B-GGUF) UD-Q3_K_XL
    Q3 quants is already good for translation. Quants upper than UD-Q3_K_XL doesn't bring big difference.
    If you have limited VRAM, you can choose Q2 quants but translation will degrade a bit.
-3. Double-click `live_subtitle.exe` to start.
+4. Double-click `live_subtitle.exe` to start.
 
 ---
 
