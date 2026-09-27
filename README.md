@@ -14,45 +14,6 @@ A local, real-time bilingual live subtitle application that transcribes and tran
 - **Vulkan GPU Acceleration**: Supports NVIDIA, AMD and Intel GPUs.
 - **Chinese Conversion**: Built-in OpenCC integration for Traditional/Simplified Chinese output.
 
----
-Update v2.1
-
--optimize
-
-Recommend models:
-
-ASR: qwen3-asr-1.7b-q4_k.gguf ; low vram device: qwen3-asr-0.6b-q4_k.gguf
-
-LLM: Hy-MT2-1.8B-UD-Q3_K_XL.gguf ; low vram device: Hy-MT2-1.8B-Q2
-
-vram usage:
-qwen3-asr-1.7b-q4 + Hy-MT2-1.8B-Q3:~7GB vram
-
-qwen3-asr-0.6b-q4 + Hy-MT2-1.8B-Q2:~4GB vram
-
-*qwen3-asr-0.6b is good enough for doing streaming transcript ; 1.7b has better accuracy and context understanding
-
-*Hy-MT2-1.8B-Q2 for short sentence translation is acceptable ; Q3 is already very good
-
----
-Update v2.0
--Replace engine with CrispASR *(Credits to [CrispStrobe](https://github.com/CrispStrobe/CrispASR))*
-Now it can use more ASR models. 
-
-1,Please download CrispASR from **[CrispASR release](https://github.com/CrispStrobe/CrispASR/releases)** ,
-and then unzip it as folder CrispASR.
-
-2,Put ASR model and LLM model into models folder
-
-folder structure:
-![folder](https://github.com/kw4356/Live-subtitle-tool/blob/main/folder-structure.PNG)
-
-Recommend models
-ASR: qwen3-asr-1.7b-q4_k.gguf
-
-LLM: LFM2.5-1.2B-Instruct-Q4_K_M.gguf or qwen2.5-1.5b-instruct-q4_k_m
-
----
 
 ## ⚙️ Tech 
 
@@ -95,6 +56,9 @@ live_subtitle/
 
 ```
 ### Executable (.exe) Environment
+
+![folder](https://github.com/kw4356/Live-subtitle-tool/blob/main/folder-structure.PNG)
+
 ```text
 live_subtitle/
 ├── live_subtitle.exe       # Main executable
@@ -102,7 +66,7 @@ live_subtitle/
 ├── models/                # Local models directory
 │   ├── qwen3-asr.gguf          # Whisper model (.bin)
 │   └── model.gguf         # LLM model (.gguf)
-![folder](https://github.com/kw4356/Live-subtitle-tool/blob/main/folder-structure.PNG)
+
 ```
 
 ---
