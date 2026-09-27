@@ -1,6 +1,6 @@
 # Live Subtitle Tool 🎙️💬
 
-A local, real-time bilingual live subtitle application that transcribes and translates system audio output using **OpenAI Whisper** and **LLM models**. Powered by `whisper.cpp` and `llama.cpp` with Vulkan acceleration for cross-GPU hardware support.
+A local, real-time bilingual live subtitle application that transcribes and translates system audio output using **Qwen3-ASR** and **LLM models**. Powered by `CrispASR` and `llama.cpp` with Vulkan acceleration for cross-GPU hardware support.
 
 > *Note: This project was mostly vibe-coded using Gemini 3.6 Flash.*
 
@@ -12,7 +12,6 @@ A local, real-time bilingual live subtitle application that transcribes and tran
 - **Multi-Model Support**: Compatible with various ASR models.
 - **Simultaneous Transcription & Translation**: Real-time speech recognition and translation into target languages.
 - **Vulkan GPU Acceleration**: Supports NVIDIA, AMD and Intel GPUs.
-- **Voice Activity Detection (VAD)**: Integrated VAD for filtering silence and audio segments.
 - **Chinese Conversion**: Built-in OpenCC integration for Traditional/Simplified Chinese output.
 
 ---
@@ -57,7 +56,7 @@ LLM: LFM2.5-1.2B-Instruct-Q4_K_M.gguf or qwen2.5-1.5b-instruct-q4_k_m
 
 ## ⚙️ Tech 
 
-System audio output → whisper.cpp & VAD → subtitle → llama cpp → translate subtitle
+System audio output → Qwen3-ASR → subtitle → llama cpp → translate subtitle
 
 ---
 
@@ -75,8 +74,7 @@ System audio output → whisper.cpp & VAD → subtitle → llama cpp → transla
 ## 📦 Dependencies & Acknowledgments
 
 - **[llama-cpp-python (Vulkan)](https://github.com/abetlen/llama-cpp-python/releases)** *(Credits to [abetlen](https://github.com/abetlen))*
-- **[whisper.cpp (Vulkan)](https://github.com/lemonade-sdk/whisper.cpp-rocm/releases)** *(Credits to [lemonade-sdk](https://github.com/lemonade-sdk))*
-- `numpy`
+- **[CrispASR (Vulkan)](https://github.com/CrispStrobe/CrispASR/releases)** *(Credits to [CrispStrobe](https://github.com/CrispStrobe/CrispASR))*
 - `PyQt6`
 - `pyaudiowpatch`
 - `opencc` *(for Traditional / Simplified Chinese text conversion)*
@@ -92,71 +90,34 @@ live_subtitle/
 ├── live_subtitle.py        # Main entry script
 ├── requirements.txt       # Python dependency list
 ├── models/                # Local models directory (download manually)
-│   ├── ggml.bin          # Whisper model (GGML format .bin)
+│   ├── qwen3-asr.gguf          # Whisper model (GGML format .bin)
 │   └── model.gguf         # LLM translation model (.gguf format)
-└── whisper-vulkan/        # Whisper Vulkan executable directory
-    ├── whisper-cli.exe
-    └── *.dll
+
 ```
-![python file](https://github.com/kw4356/Live-subtitle-tool/blob/main/file-structure-python.PNG)
 ### Executable (.exe) Environment
 ```text
 live_subtitle/
 ├── live_subtitle.exe       # Main executable
+├── CrispASR
 ├── models/                # Local models directory
-│   ├── ggml.bin          # Whisper model (.bin)
+│   ├── qwen3-asr.gguf          # Whisper model (.bin)
 │   └── model.gguf         # LLM model (.gguf)
-└── whisper-vulkan/        # Whisper Vulkan folder
-    ├── whisper-cli.exe
-    └── *.dll
+![folder](https://github.com/kw4356/Live-subtitle-tool/blob/main/folder-structure.PNG)
 ```
-![exe file](https://github.com/kw4356/Live-subtitle-tool/blob/main/file-structure-exe.PNG)
+
 ---
 
 ## 🚀 Get Started
 
-### Option 1: Running with Python
-
-#### 1. Install Dependencies & Binary Wheels
-```bash
-# 1. Install standard Python packages
-pip install -r requirements.txt
-
-# 2. Install pre-built llama-cpp-python Vulkan wheel
-# Download the wheel file from https://github.com/abetlen/llama-cpp-python/releases
-# Place it under your virtual environment folder and run:
-pip install llama_cpp_python-0.3.34-py3-none-win_amd64.whl
-```
-
-#### 2. Setup `whisper-vulkan`
-1. Download pre-built releases from [whisper.cpp-rocm releases](https://github.com/lemonade-sdk/whisper.cpp-rocm/releases).
-2. Create a folder named `whisper-vulkan` under your root folder.
-3. Unzip all extracted files (including `whisper-cli.exe` and `.dll` dependencies) into the `whisper-vulkan` directory.
-
-#### 3. Download ASR & LLM Models
-1. Create a `models/` directory in your root folder.
-2. Download and place your selected models inside:
-   - **Whisper Model**: must be in **GGML** format (`.bin`).
-   - **LLM Model**: must be in **GGUF** format (`.gguf`).
-*it will auto search for the .bin and .gguf files inside the models folder
-#### 4. Run Application
-```bash
-python live_subtitle.py
-```
-
----
-
-### Option 2: Running Standalone Executable (.exe)
-
-1. Create a folder and place [live_subtitle.exe](https://github.com/kw4356/Live-subtitle-tool/releases/tag/v1.0) inside.
-2. Download `whisper-vulkan` from [whisper.cpp-rocm releases](https://github.com/lemonade-sdk/whisper.cpp-rocm/releases).
-   - Create a folder named `whisper-vulkan` in the same directory.
-   - Extract all contents (`whisper-cli.exe`, `.dll` files) into `whisper-vulkan/`.
-3. Create a `models/` directory in the same path and add your models:
-   - **Whisper model** (`.bin` GGML format)
-   - **LLM model** (`.gguf` format)
-*it will auto search for the .bin and .gguf files inside the models folder
-4. Double-click `live_subtitle.exe` to start.
+1. Download and unzip **live_subtitle.rar** [live_subtitle.exe](https://github.com/kw4356/Live-subtitle-tool/releases/tag/v2.1) inside.
+2. Download ASR and LLM model
+   **Recommend**
+   ASR:[Qwen3-ASR-1.7B-GGUF](https://huggingface.co/cstr/qwen3-asr-1.7b-GGUF) Q4_K or
+   [Qwen3-ASR 0.6B-GGUF](https://huggingface.co/cstr/qwen3-asr-0.6b-GGUF) q4_k-imatrix if you have limited VRAM
+   LLM:[Hy-MT2-1.8B-GGUF](https://huggingface.co/unsloth/Hy-MT2-1.8B-GGUF) UD-Q3_K_XL
+   Q3 quants is already good for translation. Quants upper than UD-Q3_K_XL doesn't bring big difference.
+   If you have limited VRAM, you can choose Q2 quants but translation will degrade a bit.
+3. Double-click `live_subtitle.exe` to start.
 
 ---
 
@@ -166,26 +127,22 @@ python live_subtitle.py
 
 | Parameter | Description |
 | :--- | :--- |
-| **Speech** | Select source audio language or choose `Auto Detect`. *(Whisper natively supports 99 languages).* |
-| **Translate** | Target translation language for the LLM output (e.g., Traditional Chinese, Simplified Chinese, English, etc.). |
-| **Interval** | Defines `chunk_length` (seconds of audio processed per chunk).<br>• **Default**: `1.50 s`<br>• **Recommended**: `1.5s` – `3.0s`<br>• *Note*: Values `< 1.0s` may cause context loss. Higher values increase accuracy but add latency. |
-| **Lines** | Number of historical subtitle lines displayed on screen. *(Default: `3`)*. |
-| **Font** | Subtitle font size in pixels. *(Default: `19 px`)*. |
+| **Source** | Select source audio language or choose `Auto Detect`. |
+| **Target** | Target translation language for the LLM output (e.g., Traditional Chinese, Simplified Chinese, English, etc.). `Show Original` disable and hide the translated subtitle. |
+| **Translation Only** | Hide original subtitle , only show translated subtitle. |
+| **Size** | Subtitle font size in pixels. *(Default: `18 px`)*. |
 | **Color** | Subtitle text color. *(Default: `Cyan`)*. |
 
 ---
 
 ## 📊 Model Selection Guide
 
-### 1. Whisper Models (Speech Recognition)
+### 1. ASR Models (Speech Recognition)
 
 | Model Variant | Size | Recommended Use Case & Performance Notes |
 | :--- | :--- | :--- |
-| **Large-v3-turbo Q8 quant** | ~850 MB | **Top Recommendation** if VRAM permits. Highest accuracy/speed ratio. |
-| **Large-v3-turbo Q6 quant** | ~660 MB | Slightly higher fidelity than Q5 quant. |
-| **Large-v3-turbo Q5 quant** | ~560 MB | Excellent balance of recognition accuracy and VRAM usage. |
-| **Large-v3-turbo Q4 quant** | ~470 MB | Lowest recommended quantization for Large-v3-turbo. |
-| **Small Q8 quant** | ~260 MB | Fallback choice for very low VRAM systems. *(Models smaller than Small Q8 are not recommended due to accuracy degradation)*. |
+| **Qwen3-ASR-1.7B-Q4_K** | ~1.5 GB | **Recommendation** Best Quality. |
+| **Qwen3-ASR-0.6B-Q4_K** | ~630 MB | Limited GPU/VRAM choice. Degrade in semantic comprehension |
 
 ### 2. LLM Models (Translation)
 
@@ -193,14 +150,14 @@ python live_subtitle.py
 
 | Model Name | Size | Notes & Strengths |
 | :--- | :--- | :--- |
-| `qwen2.5-1.5b-instruct-q4_k_m` | ~950 MB | Strong performance across Asian languages. |
-| `gemma-3-1b-it-q4_k_m` | ~750 MB | Fast and compact general instruction model. |
-| `HY-MT1.5-1.8B-Q4_K_M` | ~1.1 GB | Specialized machine translation model by Tencent. |
+| `HY-MT1.5-1.8B-UD-Q3_K_XL` | ~990 MB | **Recommendation** Specialized machine translation model by Tencent. |
+| `HY-MT1.5-1.8B-Q2` | ~800 MB | Limited GPU/VRAM choice. Degrade in translation quality. |
+
+
 
 
 💡 **Hardware VRAM Pairing Example:**
-- Combining **Large-v3-turbo Q8** (~850 MB) + **qwen2.5-1.5b-instruct-q4_k_m** (~950 MB), total vram usage will be around 2.5GB.
-So, even GTX1060 3GB should be good enough to run smoothly.  
+- Combining **Qwen3-ASR-1.7B-Q4_K** (~1.5 GB) + **HY-MT1.5-1.8B-UD-Q3_K_XL** (~990 MB), total vram usage when running is around 4GB.
 ---
 
 ## 📜 License & Copyright
