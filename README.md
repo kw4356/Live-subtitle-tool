@@ -1,3 +1,5 @@
+[中文](https://github.com/kw4356/Live-subtitle-tool/blob/main/README-ZH.md)
+
 # Live Subtitle Tool 🎙️💬
 
 A local, real-time bilingual live subtitle application that transcribes and translates system audio output using **Qwen3-ASR** and **LLM models**. Powered by `CrispASR` and `llama.cpp` with Vulkan acceleration for cross-GPU hardware support.
@@ -9,7 +11,6 @@ A local, real-time bilingual live subtitle application that transcribes and tran
 ## ✨ Core Features
 
 - **Floating Overlay UI**: Semi-transparent, resizable, and stretchable subtitle window.
-- **Multi-Model Support**: Compatible with various ASR models.
 - **Simultaneous Transcription & Translation**: Real-time speech recognition and translation into target languages.
 - **Vulkan GPU Acceleration**: Supports NVIDIA, AMD and Intel GPUs.
 - **Chinese Conversion**: Built-in OpenCC integration for Traditional/Simplified Chinese output.
@@ -51,8 +52,8 @@ live_subtitle/
 ├── live_subtitle.py        # Main entry script
 ├── requirements.txt       # Python dependency list
 ├── models/                # Local models directory (download manually)
-│   ├── qwen3-asr.gguf          # Whisper model (GGML format .bin)
-│   └── model.gguf         # LLM translation model (.gguf format)
+│   ├── qwen3-asr.gguf          # ASR model
+│   └── model.gguf         # LLM translation model
 
 ```
 ### Executable (.exe) Environment
@@ -64,8 +65,8 @@ live_subtitle/
 ├── live_subtitle.exe       # Main executable
 ├── CrispASR
 ├── models/                # Local models directory
-│   ├── qwen3-asr.gguf          # Whisper model (.bin)
-│   └── model.gguf         # LLM model (.gguf)
+│   ├── qwen3-asr.gguf          # ASR model
+│   └── model.gguf         # LLM model
 
 ```
 
@@ -127,7 +128,7 @@ live_subtitle/
 
 ## 📜 License & Copyright
 
-- **Third-Party Libraries**: Individual components (e.g., `whisper.cpp`, `llama.cpp`, and respective dependencies) are governed by their original project licenses.
+- **Third-Party Libraries**: Individual components (e.g., `CrispASR`, `llama.cpp`, and respective dependencies) are governed by their original project licenses.
 - **Project License**: Distributed under the **[MIT License](https://opensource.org/license/MIT)**.
 
 Copyright © 2026 **kw4356**
