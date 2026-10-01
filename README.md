@@ -107,7 +107,7 @@ live_subtitle/
 
 | Model Variant | Size | Recommended Use Case & Performance Notes |
 | :--- | :--- | :--- |
-| **Qwen3-ASR-1.7B-Q4_K** | ~1.5 GB | **Recommendation** Best Quality. |
+| **Qwen3-ASR-1.7B-Q4_K** | ~1.5 GB | **Recommended** Best Quality. |
 | **Qwen3-ASR-0.6B-Q4_K** | ~630 MB | Limited GPU/VRAM choice. Degrade in semantic comprehension |
 
 ### 2. LLM Models (Translation)
@@ -116,7 +116,7 @@ live_subtitle/
 
 | Model Name | Size | Notes & Strengths |
 | :--- | :--- | :--- |
-| `HY-MT1.5-1.8B-UD-Q3_K_XL` | ~990 MB | **Recommendation** Specialized machine translation model by Tencent. |
+| `HY-MT1.5-1.8B-UD-Q3_K_XL` | ~990 MB | **Recommended** Specialized machine translation model by Tencent. |
 | `HY-MT1.5-1.8B-Q2` | ~800 MB | Limited GPU/VRAM choice. Degrade in translation quality. |
 
 
