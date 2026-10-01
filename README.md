@@ -74,7 +74,7 @@ live_subtitle/
 
 ## 🚀 Get Started
 
-1. Download and unzip [live_subtitle.rar](https://github.com/kw4356/Live-subtitle-tool/releases/tag/v2.1) inside.
+1. Download and unzip [live_subtitle.rar](https://github.com/kw4356/Live-subtitle-tool/releases/tag/v2.1) .
 2. Download ASR and LLM model, put them into `models` folder.
    
    **Recommend**
